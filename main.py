@@ -16,7 +16,7 @@ def add_server_time(server_url="https://hub.weirdhost.xyz/server/3ff959d6"):
     server_url= f"https://hub.weirdhost.xyz/server/{pterodactyl_id}"
     
     # 检查是否提供了任何登录凭据
-    if not (remember_web_cookie or (pterodactyl_email and pterodactyl_password)):
+    if not (remember_web_cookie or (pterodactyl_email and pterodactyl_password) or pterodactyl_id):
         print("错误: 缺少登录凭据。请设置 REMEMBER_WEB_COOKIE 或 PTERODACTYL_EMAIL 和 PTERODACTYL_PASSWORD 环境变量。")
         return False
 
