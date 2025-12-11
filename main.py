@@ -2,7 +2,7 @@ import os
 import time
 from playwright.sync_api import sync_playwright, Cookie, TimeoutError as PlaywrightTimeoutError
 
-def add_server_time(server_url="https://hub.weirdhost.xyz/server/3ff959d6"):
+def add_server_time(server_url="https://hub.weirdhost.xyz/server/5b221922"):
     """
     尝试登录 hub.weirdhost.xyz 并点击 "시간추가" 按钮。
     优先使用 REMEMBER_WEB_COOKIE 进行会话登录，如果不存在则回退到邮箱密码登录。
@@ -12,8 +12,6 @@ def add_server_time(server_url="https://hub.weirdhost.xyz/server/3ff959d6"):
     remember_web_cookie = os.environ.get('REMEMBER_WEB_COOKIE')
     pterodactyl_email = os.environ.get('PTERODACTYL_EMAIL')
     pterodactyl_password = os.environ.get('PTERODACTYL_PASSWORD')
-    pterodactyl_id = os.environ.get('PTERODACTYL_ID')
-    server_url= f"https://hub.weirdhost.xyz/server/{pterodactyl_id}"
     
     # 检查是否提供了任何登录凭据
     if not (remember_web_cookie or (pterodactyl_email and pterodactyl_password) or pterodactyl_id):
